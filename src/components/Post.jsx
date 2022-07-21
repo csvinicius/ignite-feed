@@ -1,12 +1,32 @@
 import styles from './Post.module.css';
 
-export function Post(props) {
-    console.log(props);
+export function Post() {
+    return ( 
+        <article className={styles.post}>
+            <header>
+                <div className={styles.author}>
+                    <img className={styles.avatar} src="https://github.com/csvinicius.png" />
+                    <div className={styles.authorInfo}>
+                        <strong>Vinicius Sousa</strong>
+                        <span>Frontend Developer</span>
+                    </div>
+                </div>
 
-    return (
-        <div>
-            <strong>{props.author}</strong>
-            <p>{props.content}</p>
-        </div>
-    )
+                <time title='21 de Julho de 2022' dateTime='2022-07-21'>Publicado há 1h</time>
+            </header>
+
+            <div className={styles.content}>
+                <p>
+                    <p>Fala galeraa 👋</p>
+                    <p>Acabei de subir mais</p> um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
+                    <p><a href=''>vini.design/doctorcare</a></p>
+                    <p>
+                        <a href=''>#novoprojeto</a>{' '}
+                        <a href="">#rocketseat</a>{' '}
+                        <a href="">#nlw</a> 
+                    </p>
+                </p>
+            </div>
+        </article>
+    );
 }
