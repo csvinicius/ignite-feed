@@ -6,7 +6,22 @@ import styles from './App.module.css'
 
 import './global.css';
 
-const posts = [
+
+interface postProps {
+  id: number;
+  author: {
+    avatarUrl: string;
+    name: string;
+    role: string;
+  };
+  content: {
+    type: 'paragraph' | 'link';
+    content: string;
+  }[];
+  publishedAt: Date;
+}
+
+const posts : postProps[] = [
   {
     id: 1,
     author: {
@@ -47,8 +62,8 @@ export function App() {
         <main>
           {posts.map(post => {
             return (
-              <Post 
-                key={post.id} 
+              <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
